@@ -9,14 +9,14 @@ defined('ABSPATH') || exit;
 
 final class AssetDependency implements IAssetDependency
 {
-    public function __construct(
-        private string $handle,
-    ) {
-    }
+    private string $handle;
 
     public static function of(string $handle): self
     {
-        return new self($handle);
+        $instance = new self();
+        $instance->handle($handle);
+
+        return $instance;
     }
 
     public function handle(string $handle): self
