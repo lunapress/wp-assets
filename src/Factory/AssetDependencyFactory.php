@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets;
+namespace LunaPress\Wp\Assets\Factory;
 
-use LunaPress\Wp\AssetsContracts\IAssetDependency;
-use LunaPress\Wp\AssetsContracts\IAssetDependencyFactory;
+use LunaPress\Wp\AssetsContracts\Entity\IAssetDependency;
+use LunaPress\Wp\AssetsContracts\Factory\IAssetDependencyFactory;
 use Psr\Container\ContainerInterface;
 
 defined('ABSPATH') || exit;

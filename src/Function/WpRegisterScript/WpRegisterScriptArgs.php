@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets\WpRegisterScript;
+namespace LunaPress\Wp\Assets\Function\WpRegisterScript;
 
 use LunaPress\FoundationContracts\Support\WpFunction\WpUnset;
-use LunaPress\Wp\AssetsContracts\WpRegisterScript\Enum\WpRegisterScriptStrategy;
-use LunaPress\Wp\AssetsContracts\WpRegisterScript\IWpRegisterScriptArgs;
+use LunaPress\Wp\AssetsContracts\Enum\ScriptStrategy;
+use LunaPress\Wp\AssetsContracts\Function\WpRegisterScript\IWpRegisterScriptArgs;
 
 defined('ABSPATH') || exit;
 
 final class WpRegisterScriptArgs implements IWpRegisterScriptArgs
 {
-    private WpRegisterScriptStrategy|WpUnset $strategy = WpUnset::Value;
-    private bool|WpUnset $inFooter                     = WpUnset::Value;
+    private ScriptStrategy|WpUnset $strategy = WpUnset::Value;
+    private bool|WpUnset $inFooter           = WpUnset::Value;
 
-    public function strategy(WpRegisterScriptStrategy|WpUnset $strategy): self
+    public function strategy(ScriptStrategy|WpUnset $strategy): self
     {
         $this->strategy = $strategy;
         return $this;
@@ -26,7 +26,7 @@ final class WpRegisterScriptArgs implements IWpRegisterScriptArgs
         return $this;
     }
 
-    public function getStrategy(): WpRegisterScriptStrategy|WpUnset
+    public function getStrategy(): ScriptStrategy|WpUnset
     {
         return $this->strategy;
     }

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets\WpEnqueueScriptModule;
+namespace LunaPress\Wp\Assets\Function\WpEnqueueScriptModule;
 
-use LunaPress\Wp\AssetsContracts\WpEnqueueScriptModule\IWpEnqueueScriptModuleDep;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScriptModule\IWpEnqueueScriptModuleDepFactory;
+use LunaPress\Wp\AssetsContracts\Function\WpEnqueueScriptModule\IWpEnqueueScriptModuleDep;
+use LunaPress\Wp\AssetsContracts\Function\WpEnqueueScriptModule\IWpEnqueueScriptModuleDepFactory;
 use Psr\Container\ContainerInterface;
 
 defined('ABSPATH') || exit;

@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets\WpEnqueueScript;
+namespace LunaPress\Wp\Assets\Function\WpEnqueueScript;
 
 use LunaPress\FoundationContracts\Support\WpFunction\WpUnset;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScript\Enum\WpEnqueueScriptStrategy;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScript\IWpEnqueueScriptArgs;
+use LunaPress\Wp\AssetsContracts\Enum\ScriptStrategy;
+use LunaPress\Wp\AssetsContracts\Function\WpEnqueueScript\IWpEnqueueScriptArgs;
 
 defined('ABSPATH') || exit;
 
 final class WpEnqueueScriptArgs implements IWpEnqueueScriptArgs
 {
-    private WpEnqueueScriptStrategy|WpUnset $strategy = WpUnset::Value;
-    private bool|WpUnset $inFooter                    = WpUnset::Value;
+    private ScriptStrategy|WpUnset $strategy = WpUnset::Value;
+    private bool|WpUnset $inFooter           = WpUnset::Value;
 
     public function toArray(): array
     {
@@ -23,7 +23,7 @@ final class WpEnqueueScriptArgs implements IWpEnqueueScriptArgs
     }
 
 
-    public function strategy(WpEnqueueScriptStrategy|WpUnset $strategy): IWpEnqueueScriptArgs
+    public function strategy(ScriptStrategy|WpUnset $strategy): IWpEnqueueScriptArgs
     {
         $this->strategy = $strategy;
         return $this;
@@ -35,7 +35,7 @@ final class WpEnqueueScriptArgs implements IWpEnqueueScriptArgs
         return $this;
     }
 
-    public function getStrategy(): WpEnqueueScriptStrategy|WpUnset
+    public function getStrategy(): ScriptStrategy|WpUnset
     {
         return $this->strategy;
     }

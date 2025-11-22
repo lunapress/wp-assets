@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets\WpEnqueueScript;
+namespace LunaPress\Wp\Assets\Function\WpEnqueueScript;
 
-use LunaPress\Wp\AssetsContracts\WpEnqueueScript\Enum\WpEnqueueScriptStrategy;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScript\IWpEnqueueScriptArgs;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScript\IWpEnqueueScriptArgsFactory;
+use LunaPress\Wp\AssetsContracts\Enum\ScriptStrategy;
+use LunaPress\Wp\AssetsContracts\Function\WpEnqueueScript\IWpEnqueueScriptArgs;
+use LunaPress\Wp\AssetsContracts\Function\WpEnqueueScript\IWpEnqueueScriptArgsFactory;
 use Psr\Container\ContainerInterface;
 
 defined('ABSPATH') || exit;
@@ -17,7 +17,7 @@ final readonly class WpEnqueueScriptArgsFactory implements IWpEnqueueScriptArgsF
     ) {
     }
 
-    public function make(WpEnqueueScriptStrategy $strategy, bool $inFooter): IWpEnqueueScriptArgs
+    public function make(ScriptStrategy $strategy, bool $inFooter): IWpEnqueueScriptArgs
     {
         /** @var IWpEnqueueScriptArgs $args */
         $args = $this->container->get(IWpEnqueueScriptArgs::class);

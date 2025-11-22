@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets;
+namespace LunaPress\Wp\Assets\Entity;
 
-use LunaPress\Wp\AssetsContracts\IAssetDependency;
+use LunaPress\Wp\AssetsContracts\Entity\IAssetDependency;
 
 defined('ABSPATH') || exit;
 

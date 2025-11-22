@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets\WpRegisterScript;
+namespace LunaPress\Wp\Assets\Function\WpRegisterScript;
 
 use LunaPress\FoundationContracts\Support\WpFunction\WpArray;
-use LunaPress\Wp\AssetsContracts\IAssetDependency;
-use LunaPress\Wp\AssetsContracts\WpRegisterScript\IWpRegisterScriptArgs;
-use LunaPress\Wp\AssetsContracts\WpRegisterScript\IWpRegisterScriptFunction;
+use LunaPress\Wp\AssetsContracts\Entity\AssetDependency\IAssetDependency;
+use LunaPress\Wp\AssetsContracts\Function\WpRegisterScript\IWpRegisterScriptArgs;
+use LunaPress\Wp\AssetsContracts\Function\WpRegisterScript\IWpRegisterScriptFunction;
 
 defined('ABSPATH') || exit;
 

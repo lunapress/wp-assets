@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace LunaPress\Wp\Assets\WpEnqueueScriptModule;
+namespace LunaPress\Wp\Assets\Function\WpEnqueueScriptModule;
 
 use LunaPress\FoundationContracts\Support\WpFunction\WpUnset;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScriptModule\Enum\WpEnqueueScriptModuleImport;
-use LunaPress\Wp\AssetsContracts\WpEnqueueScriptModule\IWpEnqueueScriptModuleDep;
+use LunaPress\Wp\AssetsContracts\Enum\ScriptModuleImport;
+use LunaPress\Wp\AssetsContracts\Function\WpEnqueueScriptModule\IWpEnqueueScriptModuleDep;
 
 defined('ABSPATH') || exit;
 
@@ -13,18 +13,18 @@ final class WpEnqueueScriptModuleDep implements IWpEnqueueScriptModuleDep
 {
     public function __construct(
         private string $id,
-        private WpEnqueueScriptModuleImport|WpUnset $import = WpUnset::Value
+        private ScriptModuleImport|WpUnset $import = WpUnset::Value
     ) {
     }
 
-    public static function of(string $id, WpEnqueueScriptModuleImport|WpUnset $import = WpEnqueueScriptModuleImport::STATIC): self
+    public static function of(string $id, ScriptModuleImport|WpUnset $import = ScriptModuleImport::STATIC): self
     {
         return new self($id, $import);
     }
 
     public static function dynamic(string $id): self
     {
-        return new self($id, WpEnqueueScriptModuleImport::DYNAMIC);
+        return new self($id, ScriptModuleImport::DYNAMIC);
     }
 
     public function toArray(): array
@@ -43,7 +43,7 @@ final class WpEnqueueScriptModuleDep implements IWpEnqueueScriptModuleDep
         return $this;
     }
 
-    public function import(WpEnqueueScriptModuleImport|WpUnset $import): self
+    public function import(ScriptModuleImport|WpUnset $import): self
     {
         $this->import = $import;
 
@@ -55,7 +55,7 @@ final class WpEnqueueScriptModuleDep implements IWpEnqueueScriptModuleDep
         return $this->id;
     }
 
-    public function getImport(): WpEnqueueScriptModuleImport|WpUnset
+    public function getImport(): ScriptModuleImport|WpUnset
     {
         return $this->import;
     }
